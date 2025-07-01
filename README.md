@@ -1,6 +1,6 @@
-# assiomi_di_kolmogorov
+# Assiomi di Kolmogorov
 
-Un'applicazione Python con interfaccia grafica che mostra in modo interattivo e comprensibile come funzionano gli assiomi di Kolmogorov.
+Un'applicazione Java con interfaccia grafica che mostra in modo interattivo e comprensibile come funzionano gli assiomi di Kolmogorov.
 
 ## 🚀 Come Eseguire l'Applicazione
 
