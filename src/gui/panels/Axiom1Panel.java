@@ -2,8 +2,8 @@ package gui.panels;
 
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -126,53 +126,50 @@ public class Axiom1Panel implements BasePanel {
         introArea.setMaxHeight(100);
         introArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
-        // Creazione del grafico
+        // Creazione del grafico combinato
         NumberAxis xAxis = new NumberAxis(0, 6, 1);
         NumberAxis yAxis = new NumberAxis(0, 1, 0.1);
         xAxis.setLabel("Eventi");
         yAxis.setLabel("Probabilità P(A)");
         
-        ScatterChart<Number, Number> scatterChart = new ScatterChart<>(xAxis, yAxis);
-        scatterChart.setTitle("Visualizzazione del Primo Assioma");
+        LineChart<Number, Number> lineChart = new LineChart<>(xAxis, yAxis);
+        lineChart.setTitle("Visualizzazione del Primo Assioma");
+        lineChart.setCreateSymbols(true);
+        lineChart.setLegendVisible(true);
         
-        XYChart.Series<Number, Number> series = new XYChart.Series<>();
-        series.setName("Probabilità di diversi eventi");
+        // Serie per i punti di probabilità
+        XYChart.Series<Number, Number> pointSeries = new XYChart.Series<>();
+        pointSeries.setName("Probabilità di diversi eventi");
         
         // Aggiunta di alcuni punti di esempio
-        series.getData().add(new XYChart.Data<>(1, 0.167)); // P(ottenere 1 con un dado) = 1/6
-        series.getData().add(new XYChart.Data<>(2, 0.5));   // P(ottenere testa con una moneta) = 1/2
-        series.getData().add(new XYChart.Data<>(3, 0.25));  // P(estrarre un asso da un mazzo) ≈ 1/4
-        series.getData().add(new XYChart.Data<>(4, 0.1));   // P(evento raro) = 0.1
-        series.getData().add(new XYChart.Data<>(5, 0.0));   // P(evento impossibile) = 0
+        pointSeries.getData().add(new XYChart.Data<>(1, 0.167)); // P(ottenere 1 con un dado) = 1/6
+        pointSeries.getData().add(new XYChart.Data<>(2, 0.5));   // P(ottenere testa con una moneta) = 1/2
+        pointSeries.getData().add(new XYChart.Data<>(3, 0.25));  // P(estrarre un asso da un mazzo) ≈ 1/4
+        pointSeries.getData().add(new XYChart.Data<>(4, 0.1));   // P(evento raro) = 0.1
+        pointSeries.getData().add(new XYChart.Data<>(5, 0.0));   // P(evento impossibile) = 0
         
-        scatterChart.getData().add(series);
-        
-        // Aggiunta di una serie per la linea del limite inferiore (y = 0)
+        // Serie per la linea rossa del limite inferiore (y = 0 per rappresentare correttamente l'assioma)
         XYChart.Series<Number, Number> limitSeries = new XYChart.Series<>();
         limitSeries.setName("Limite inferiore P(A) ≥ 0");
         
-        // Creazione di una linea orizzontale a y = 0
-        limitSeries.getData().add(new XYChart.Data<>(0, 0));
-        limitSeries.getData().add(new XYChart.Data<>(6, 0));
+        // Creazione di una linea orizzontale esattamente a y = 0
+        for (double x = 0; x <= 6; x += 0.1) {
+            limitSeries.getData().add(new XYChart.Data<>(x, 0.0));
+        }
         
-        scatterChart.getData().add(limitSeries);
+        lineChart.getData().addAll(pointSeries, limitSeries);
         
         StackPane chartContainer = new StackPane();
-        chartContainer.getChildren().add(scatterChart);
+        chartContainer.getChildren().add(lineChart);
+        chartContainer.getStyleClass().add("chart-container");
         
-        // Personalizzazione della linea rossa dopo che il grafico è stato aggiunto al container
-        chartContainer.sceneProperty().addListener((obs, oldScene, newScene) -> {
-            if (newScene != null) {
-                newScene.getStylesheets().add("data:text/css," +
-                    ".chart-series-line.series1 { -fx-stroke: red; -fx-stroke-width: 3px; } " +
-                    ".chart-line-symbol.series1 { -fx-background-color: transparent; }");
-            }
-        });
+        // Rimuovo il CSS inline per evitare errori - userò solo il CSS esterno
         
         TextArea explanationArea = new TextArea();
         explanationArea.setText("Il grafico mostra che tutte le probabilità sono maggiori o uguali a zero, " +
-                                  "in accordo con il primo assioma. La linea rossa rappresenta il limite inferiore " +
-                                  "per qualsiasi probabilità. Nessun punto può trovarsi al di sotto di questa linea.");
+                                  "in accordo con il primo assioma. La linea rossa orizzontale rappresenta il limite inferiore " +
+                                  "per qualsiasi probabilità (P(A) ≥ 0). Nessun punto può trovarsi al di sotto di questa linea. " +
+                                  "I punti arancioni rappresentano esempi di probabilità valide di diversi eventi.");
         explanationArea.setWrapText(true);
         explanationArea.setEditable(false);
         explanationArea.setPrefRowCount(4);
