@@ -27,7 +27,7 @@ public class Axiom3Panel implements BasePanel {
         
         // Titolo
         Label title = new Label("Terzo Assioma di Kolmogorov: Additività");
-        title.setFont(Font.font("System", FontWeight.BOLD, 24));
+        title.setFont(Font.font("System", FontWeight.BOLD, 26));
         
         // Definizione formale
         TitledPane formalDefinition = createFormalDefinitionSection();
@@ -61,6 +61,7 @@ public class Axiom3Panel implements BasePanel {
         definitionArea.setWrapText(true);
         definitionArea.setEditable(false);
         definitionArea.setPrefRowCount(2);
+        definitionArea.setMinHeight(200);
         definitionArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         VBox formulaBox = new VBox(10);
@@ -82,6 +83,7 @@ public class Axiom3Panel implements BasePanel {
         explanationArea.setWrapText(true);
         explanationArea.setEditable(false);
         explanationArea.setPrefRowCount(7);
+        explanationArea.setMinHeight(200);
         explanationArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         content.getChildren().addAll(definitionArea, formulaBox, explanationArea);
@@ -107,6 +109,8 @@ public class Axiom3Panel implements BasePanel {
         explanationArea.setWrapText(true);
         explanationArea.setEditable(false);
         explanationArea.setPrefRowCount(8);
+        explanationArea.setMinHeight(100);
+        explanationArea.setPrefHeight(100);
         explanationArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         content.getChildren().add(explanationArea);
@@ -126,6 +130,7 @@ public class Axiom3Panel implements BasePanel {
         introArea.setWrapText(true);
         introArea.setEditable(false);
         introArea.setPrefRowCount(3);
+        introArea.setMinHeight(200);
         introArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Creazione del grafico a barre
@@ -155,25 +160,25 @@ public class Axiom3Panel implements BasePanel {
         VBox vennA = new VBox(5);
         Circle circleA = new Circle(30, Color.LIGHTBLUE);
         Text labelA = new Text("A");
-        labelA.setFont(Font.font("System", FontWeight.BOLD, 14));
+        labelA.setFont(Font.font("System", FontWeight.BOLD, 12));
         vennA.getChildren().addAll(circleA, labelA);
         
         Text plusSign = new Text("+");
-        plusSign.setFont(Font.font("System", FontWeight.BOLD, 20));
+        plusSign.setFont(Font.font("System", FontWeight.BOLD, 18));
         
         VBox vennB = new VBox(5);
         Circle circleB = new Circle(30, Color.LIGHTCORAL);
         Text labelB = new Text("B");
-        labelB.setFont(Font.font("System", FontWeight.BOLD, 14));
+        labelB.setFont(Font.font("System", FontWeight.BOLD, 12));
         vennB.getChildren().addAll(circleB, labelB);
         
         Text equalsSign = new Text("=");
-        equalsSign.setFont(Font.font("System", FontWeight.BOLD, 20));
+        equalsSign.setFont(Font.font("System", FontWeight.BOLD, 18));
         
         VBox vennUnion = new VBox(5);
         Rectangle rectUnion = new Rectangle(80, 30, Color.LIGHTGREEN);
         Text labelUnion = new Text("A ∪ B");
-        labelUnion.setFont(Font.font("System", FontWeight.BOLD, 14));
+        labelUnion.setFont(Font.font("System", FontWeight.BOLD, 12));
         vennUnion.getChildren().addAll(rectUnion, labelUnion);
         
         vennBox.getChildren().addAll(vennA, plusSign, vennB, equalsSign, vennUnion);
@@ -183,6 +188,7 @@ public class Axiom3Panel implements BasePanel {
         vennExplanationArea.setWrapText(true);
         vennExplanationArea.setEditable(false);
         vennExplanationArea.setPrefRowCount(2);
+        vennExplanationArea.setMinHeight(200);
         vennExplanationArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         content.getChildren().addAll(introArea, barChart, vennBox, vennExplanationArea);
@@ -200,11 +206,13 @@ public class Axiom3Panel implements BasePanel {
         introArea.setWrapText(true);
         introArea.setEditable(false);
         introArea.setPrefRowCount(1);
+        introArea.setMinHeight(600);
+        introArea.setPrefHeight(600);
         introArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Esempio 1
         Label example1Label = new Label("Esempio 1: Lancio di un dado - numeri pari");
-        example1Label.setFont(Font.font("System", FontWeight.BOLD, 14));
+        example1Label.setFont(Font.font("System", FontWeight.BOLD, 12));
         
         TextArea example1Area = new TextArea("Consideriamo l'evento 'ottenere un numero pari' lanciando un dado.\n" +
                                "Questo evento può essere scomposto in tre eventi mutuamente esclusivi:\n" +
@@ -215,11 +223,12 @@ public class Axiom3Panel implements BasePanel {
         example1Area.setWrapText(true);
         example1Area.setEditable(false);
         example1Area.setPrefRowCount(7);
+        example1Area.setMinHeight(200);
         example1Area.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Esempio 2
         Label example2Label = new Label("Esempio 2: Estrazione di carte - figure");
-        example2Label.setFont(Font.font("System", FontWeight.BOLD, 14));
+        example2Label.setFont(Font.font("System", FontWeight.BOLD, 12));
         
         TextArea example2Area = new TextArea("Consideriamo l'evento 'estrarre una figura' da un mazzo di 52 carte.\n" +
                                "Questo evento può essere scomposto in tre eventi mutuamente esclusivi:\n" +
@@ -230,11 +239,12 @@ public class Axiom3Panel implements BasePanel {
         example2Area.setWrapText(true);
         example2Area.setEditable(false);
         example2Area.setPrefRowCount(7);
+        example2Area.setMinHeight(200);
         example2Area.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Esempio 3
         Label example3Label = new Label("Esempio 3: Lancio di due monete");
-        example3Label.setFont(Font.font("System", FontWeight.BOLD, 14));
+        example3Label.setFont(Font.font("System", FontWeight.BOLD, 12));
         
         TextArea example3Area = new TextArea("Consideriamo il lancio di due monete e l'evento 'ottenere almeno una testa'.\n" +
                                "Lo spazio campionario è Ω = {TT, TC, CT, CC}\n" +
@@ -246,6 +256,7 @@ public class Axiom3Panel implements BasePanel {
         example3Area.setWrapText(true);
         example3Area.setEditable(false);
         example3Area.setPrefRowCount(8);
+        example3Area.setMinHeight(200);
         example3Area.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         content.getChildren().addAll(introArea, new Separator(), 
@@ -276,6 +287,7 @@ public class Axiom3Panel implements BasePanel {
         consequencesArea.setWrapText(true);
         consequencesArea.setEditable(false);
         consequencesArea.setPrefRowCount(14);
+        consequencesArea.setMinHeight(200);
         consequencesArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         content.getChildren().add(consequencesArea);
@@ -294,6 +306,7 @@ public class Axiom3Panel implements BasePanel {
         extensionArea.setWrapText(true);
         extensionArea.setEditable(false);
         extensionArea.setPrefRowCount(3);
+        extensionArea.setMinHeight(200);
         extensionArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         Text formula = MathUtils.createMathText("Se A₁, A₂, A₃, ... sono eventi mutuamente esclusivi, allora:\n" +
@@ -308,6 +321,8 @@ public class Axiom3Panel implements BasePanel {
         explanationArea.setWrapText(true);
         explanationArea.setEditable(false);
         explanationArea.setPrefRowCount(6);
+        explanationArea.setMinHeight(600);
+        explanationArea.setPrefHeight(600);
         explanationArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         content.getChildren().addAll(extensionArea, formula, explanationArea);

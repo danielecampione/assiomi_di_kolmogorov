@@ -101,7 +101,7 @@ stage.setMaximized(true);
         sidebar.setStyle("-fx-background-color: #f0f0f0; -fx-border-color: #cccccc; -fx-border-width: 0 1 0 0;");
         
         Label title = new Label("Navigazione");
-        title.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
+        title.setStyle("-fx-font-size: 19px; -fx-font-weight: bold;");
         
         Button introBtn = new Button("Introduzione");
         introBtn.setPrefWidth(200);
@@ -178,8 +178,8 @@ stage.setMaximized(true);
         // Imposta dimensioni fisse per il riquadro
         container.setPrefWidth(800);
         container.setMaxWidth(800);
-        container.setPrefHeight(700); // Aumentata l'altezza per ridurre le barre di scorrimento
-        container.setMaxHeight(700);
+        container.setPrefHeight(800); // Aumentata l'altezza per le sottosezioni più grandi
+        container.setMaxHeight(800);
         
         // Crea ScrollPane per il contenuto
         ScrollPane scrollPane = new ScrollPane(content);

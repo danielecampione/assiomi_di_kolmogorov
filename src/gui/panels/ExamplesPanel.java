@@ -52,11 +52,13 @@ public class ExamplesPanel implements BasePanel {
         introArea.setWrapText(true);
         introArea.setEditable(false);
         introArea.setPrefRowCount(2);
+        introArea.setMinHeight(100);
+        introArea.setPrefHeight(100);
         introArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Definizione del problema
         Label problemLabel = new Label("Definizione del Problema");
-        problemLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+        problemLabel.setFont(Font.font("System", FontWeight.BOLD, 18));
         
         TextArea problemArea = new TextArea();
         problemArea.setText("Un server può trovarsi in uno dei seguenti stati:\n" +
@@ -69,11 +71,13 @@ public class ExamplesPanel implements BasePanel {
         problemArea.setWrapText(true);
         problemArea.setEditable(false);
         problemArea.setPrefRowCount(8);
+        problemArea.setMinHeight(100);
+        problemArea.setPrefHeight(100);
         problemArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Applicazione degli assiomi
         Label axiomsLabel = new Label("Applicazione degli Assiomi");
-        axiomsLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+        axiomsLabel.setFont(Font.font("System", FontWeight.BOLD, 18));
         
         VBox axiomsBox = new VBox(10);
         
@@ -86,6 +90,8 @@ public class ExamplesPanel implements BasePanel {
         axiom1Area.setWrapText(true);
         axiom1Area.setEditable(false);
         axiom1Area.setPrefRowCount(6);
+        axiom1Area.setMinHeight(100);
+        axiom1Area.setPrefHeight(100);
         axiom1Area.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         TextArea axiom2Area = new TextArea();
@@ -94,6 +100,8 @@ public class ExamplesPanel implements BasePanel {
         axiom2Area.setWrapText(true);
         axiom2Area.setEditable(false);
         axiom2Area.setPrefRowCount(2);
+        axiom2Area.setMinHeight(100);
+        axiom2Area.setPrefHeight(100);
         axiom2Area.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         TextArea axiom3Area = new TextArea();
@@ -103,6 +111,8 @@ public class ExamplesPanel implements BasePanel {
         axiom3Area.setWrapText(true);
         axiom3Area.setEditable(false);
         axiom3Area.setPrefRowCount(3);
+        axiom3Area.setMinHeight(100);
+        axiom3Area.setPrefHeight(100);
         axiom3Area.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         axiomsBox.getChildren().addAll(axiom1Area, new Separator(), axiom2Area, new Separator(), axiom3Area);
@@ -139,7 +149,7 @@ public class ExamplesPanel implements BasePanel {
         
         // Scenario
         Label scenarioLabel = new Label("Scenario di Rete");
-        scenarioLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+        scenarioLabel.setFont(Font.font("System", FontWeight.BOLD, 18));
         
         TextArea scenarioArea = new TextArea("Un pacchetto di dati può essere:\n" +
                                "• Trasmesso con successo (S): P(S) = 0.85\n" +
@@ -150,11 +160,13 @@ public class ExamplesPanel implements BasePanel {
         scenarioArea.setWrapText(true);
         scenarioArea.setEditable(false);
         scenarioArea.setPrefRowCount(7);
+        scenarioArea.setMinHeight(100);
+        scenarioArea.setPrefHeight(100);
         scenarioArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Calcoli probabilistici
         Label calculationsLabel = new Label("Calcoli Probabilistici");
-        calculationsLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+        calculationsLabel.setFont(Font.font("System", FontWeight.BOLD, 18));
         
         TextArea calculationsArea = new TextArea("Probabilità di trasmissione non riuscita:\n" +
                                    "P(non successo) = P(P ∪ C) = P(P) + P(C) = 0.10 + 0.05 = 0.15\n\n" +
@@ -165,6 +177,8 @@ public class ExamplesPanel implements BasePanel {
         calculationsArea.setWrapText(true);
         calculationsArea.setEditable(false);
         calculationsArea.setPrefRowCount(8);
+        calculationsArea.setMinHeight(100);
+        calculationsArea.setPrefHeight(100);
         calculationsArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Grafico a barre
@@ -205,7 +219,7 @@ public class ExamplesPanel implements BasePanel {
         
         // Problema di classificazione
         Label problemLabel = new Label("Problema di Classificazione");
-        problemLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+        problemLabel.setFont(Font.font("System", FontWeight.BOLD, 17));
         
         TextArea problemArea = new TextArea("Un algoritmo di classificazione analizza email e le classifica come:\n" +
                               "• Spam (S): P(S) = 0.3\n" +
@@ -216,11 +230,13 @@ public class ExamplesPanel implements BasePanel {
         problemArea.setWrapText(true);
         problemArea.setEditable(false);
         problemArea.setPrefRowCount(7);
+        problemArea.setMinHeight(100);
+        problemArea.setPrefHeight(100);
         problemArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Matrice di confusione
         Label matrixLabel = new Label("Matrice di Confusione (Probabilità)");
-        matrixLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+        matrixLabel.setFont(Font.font("System", FontWeight.BOLD, 18));
         
         GridPane matrix = new GridPane();
         matrix.setHgap(10);
@@ -260,6 +276,8 @@ public class ExamplesPanel implements BasePanel {
         axiomApplicationArea.setWrapText(true);
         axiomApplicationArea.setEditable(false);
         axiomApplicationArea.setPrefRowCount(10);
+        axiomApplicationArea.setMinHeight(100);
+        axiomApplicationArea.setPrefHeight(100);
         axiomApplicationArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         content.getChildren().addAll(introArea, new Separator(), problemLabel, problemArea,
@@ -283,7 +301,7 @@ public class ExamplesPanel implements BasePanel {
         
         // Tipi di attacchi
         Label attacksLabel = new Label("Tipi di Attacchi Informatici");
-        attacksLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+        attacksLabel.setFont(Font.font("System", FontWeight.BOLD, 18));
         
         TextArea attacksArea = new TextArea("In un giorno tipico, un sistema può subire:\n" +
                               "• Nessun attacco (N): P(N) = 0.60\n" +
@@ -294,11 +312,13 @@ public class ExamplesPanel implements BasePanel {
         attacksArea.setWrapText(true);
         attacksArea.setEditable(false);
         attacksArea.setPrefRowCount(7);
+        attacksArea.setMinHeight(100);
+        attacksArea.setPrefHeight(100);
         attacksArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Analisi di sicurezza
         Label analysisLabel = new Label("Analisi di Sicurezza");
-        analysisLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+        analysisLabel.setFont(Font.font("System", FontWeight.BOLD, 18));
         
         TextArea analysisArea = new TextArea("Probabilità di subire almeno un attacco:\n" +
                                "P(attacco) = P(D ∪ I ∪ M) = P(D) + P(I) + P(M)\n" +
@@ -310,6 +330,8 @@ public class ExamplesPanel implements BasePanel {
         analysisArea.setWrapText(true);
         analysisArea.setEditable(false);
         analysisArea.setPrefRowCount(8);
+        analysisArea.setMinHeight(100);
+        analysisArea.setPrefHeight(100);
         analysisArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Grafico di sicurezza
@@ -344,7 +366,7 @@ public class ExamplesPanel implements BasePanel {
         
         // Algoritmo QuickSort randomizzato
         Label algorithmLabel = new Label("QuickSort Randomizzato");
-        algorithmLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+        algorithmLabel.setFont(Font.font("System", FontWeight.BOLD, 18));
         
         TextArea algorithmArea = new TextArea("Consideriamo QuickSort con pivot scelto casualmente. Per un array di n elementi, " +
                                 "la complessità può essere:\n" +
@@ -355,11 +377,13 @@ public class ExamplesPanel implements BasePanel {
         algorithmArea.setWrapText(true);
         algorithmArea.setEditable(false);
         algorithmArea.setPrefRowCount(7);
+        algorithmArea.setMinHeight(100);
+        algorithmArea.setPrefHeight(100);
         algorithmArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Modello probabilistico
         Label modelLabel = new Label("Modello Probabilistico Semplificato");
-        modelLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+        modelLabel.setFont(Font.font("System", FontWeight.BOLD, 18));
         
         TextArea modelArea = new TextArea("Per ogni scelta del pivot:\n" +
                             "• Pivot ottimo (primi/ultimi 25%): P(ottimo) = 0.25\n" +
@@ -372,6 +396,8 @@ public class ExamplesPanel implements BasePanel {
         modelArea.setWrapText(true);
         modelArea.setEditable(false);
         modelArea.setPrefRowCount(9);
+        modelArea.setMinHeight(100);
+        modelArea.setPrefHeight(100);
         modelArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Grafico delle prestazioni
@@ -397,6 +423,8 @@ public class ExamplesPanel implements BasePanel {
         conclusionArea.setWrapText(true);
         conclusionArea.setEditable(false);
         conclusionArea.setPrefRowCount(3);
+        conclusionArea.setMinHeight(100);
+        conclusionArea.setPrefHeight(100);
         conclusionArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         content.getChildren().addAll(introArea, new Separator(), algorithmLabel, algorithmArea,

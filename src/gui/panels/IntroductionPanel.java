@@ -21,6 +21,7 @@ public class IntroductionPanel implements BasePanel {
         // Titolo
         Label title = new Label("Introduzione agli Assiomi di Kolmogorov");
         title.setFont(Font.font("System", FontWeight.BOLD, 24));
+        title.setStyle("-fx-text-fill: #2c3e50;");
         
         // Introduzione alla teoria della probabilità
         TitledPane probabilityIntro = createProbabilityIntroSection();
@@ -54,6 +55,8 @@ public class IntroductionPanel implements BasePanel {
         textArea.setWrapText(true);
         textArea.setEditable(false);
         textArea.setPrefRowCount(8);
+        textArea.setMinHeight(100);
+        textArea.setPrefHeight(100);
         textArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         content.getChildren().add(textArea);
@@ -78,6 +81,8 @@ public class IntroductionPanel implements BasePanel {
         textArea.setWrapText(true);
         textArea.setEditable(false);
         textArea.setPrefRowCount(6);
+        textArea.setMinHeight(600);
+        textArea.setPrefHeight(600);
         textArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         content.getChildren().add(textArea);
@@ -97,11 +102,14 @@ public class IntroductionPanel implements BasePanel {
         introArea.setWrapText(true);
         introArea.setEditable(false);
         introArea.setPrefRowCount(2);
+        introArea.setMinHeight(100);
+        introArea.setPrefHeight(100);
         introArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Primo assioma
         Label axiom1Title = new Label("Primo Assioma: Non-negatività");
-        axiom1Title.setFont(Font.font("System", FontWeight.BOLD, 14));
+        axiom1Title.setFont(Font.font("System", FontWeight.BOLD, 18));
+        axiom1Title.setStyle("-fx-text-fill: #8b5cf6;");
         
         Label axiom1Label = new Label("La probabilità di un evento è un numero non negativo: P(A) ≥ 0 per ogni evento A");
         axiom1Label.setWrapText(true);
@@ -109,7 +117,8 @@ public class IntroductionPanel implements BasePanel {
         
         // Secondo assioma
         Label axiom2Title = new Label("Secondo Assioma: Normalizzazione");
-        axiom2Title.setFont(Font.font("System", FontWeight.BOLD, 14));
+        axiom2Title.setFont(Font.font("System", FontWeight.BOLD, 18));
+        axiom2Title.setStyle("-fx-text-fill: #8b5cf6;");
         
         Label axiom2Label = new Label("La probabilità dell'intero spazio campionario è 1: P(Ω) = 1");
         axiom2Label.setWrapText(true);
@@ -117,7 +126,8 @@ public class IntroductionPanel implements BasePanel {
         
         // Terzo assioma
         Label axiom3Title = new Label("Terzo Assioma: Additività");
-        axiom3Title.setFont(Font.font("System", FontWeight.BOLD, 14));
+        axiom3Title.setFont(Font.font("System", FontWeight.BOLD, 18));
+        axiom3Title.setStyle("-fx-text-fill: #8b5cf6;");
         
         Label axiom3Label = new Label("Per eventi mutuamente esclusivi, la probabilità dell'unione è la somma delle probabilità: P(A ∪ B) = P(A) + P(B) se A ∩ B = ∅");
         axiom3Label.setWrapText(true);
@@ -153,6 +163,8 @@ public class IntroductionPanel implements BasePanel {
         textArea.setWrapText(true);
         textArea.setEditable(false);
         textArea.setPrefRowCount(12);
+        textArea.setMinHeight(600);
+        textArea.setPrefHeight(600);
         textArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         content.getChildren().add(textArea);

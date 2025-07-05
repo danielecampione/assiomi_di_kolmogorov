@@ -53,7 +53,7 @@ public class SimulationPanel implements BasePanel {
         
         // Titolo
         Label title = new Label("Simulazioni Interattive degli Assiomi di Kolmogorov");
-        title.setFont(Font.font("System", FontWeight.BOLD, 24));
+        title.setFont(Font.font("System", FontWeight.BOLD, 26));
         
         // Introduzione
         TextArea introArea = new TextArea("Queste simulazioni ti permettono di vedere gli assiomi di Kolmogorov in azione. " +
@@ -62,6 +62,7 @@ public class SimulationPanel implements BasePanel {
         introArea.setWrapText(true);
         introArea.setEditable(false);
         introArea.setPrefRowCount(3);
+        introArea.setMinHeight(200);
         introArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Simulazione 1: Lancio del dado
@@ -88,6 +89,7 @@ public class SimulationPanel implements BasePanel {
         descriptionArea.setWrapText(true);
         descriptionArea.setEditable(false);
         descriptionArea.setPrefRowCount(3);
+         descriptionArea.setMinHeight(200);
         descriptionArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Controlli
@@ -95,7 +97,7 @@ public class SimulationPanel implements BasePanel {
         rollDiceButton = new Button("Lancia Dado");
         resetDiceButton = new Button("Reset");
         diceResultLabel = new Label("Risultato: -");
-        diceResultLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+        diceResultLabel.setFont(Font.font("System", FontWeight.BOLD, 12));
         
         controls.getChildren().addAll(rollDiceButton, resetDiceButton, diceResultLabel);
         
@@ -139,6 +141,8 @@ public class SimulationPanel implements BasePanel {
         descriptionArea.setWrapText(true);
         descriptionArea.setEditable(false);
         descriptionArea.setPrefRowCount(2);
+        descriptionArea.setMinHeight(100);
+        descriptionArea.setPrefHeight(100);
         descriptionArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Controlli
@@ -146,7 +150,7 @@ public class SimulationPanel implements BasePanel {
         flipCoinButton = new Button("Lancia Moneta");
         resetCoinButton = new Button("Reset");
         coinResultLabel = new Label("Risultato: -");
-        coinResultLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+        coinResultLabel.setFont(Font.font("System", FontWeight.BOLD, 12));
         
         controls.getChildren().addAll(flipCoinButton, resetCoinButton, coinResultLabel);
         

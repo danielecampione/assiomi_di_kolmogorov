@@ -16,7 +16,7 @@ public class MathUtils {
      */
     public static Text createMathText(String formula) {
         Text text = new Text(formula);
-        text.setFont(Font.font("Cambria Math", FontWeight.NORMAL, 16));
+        text.setFont(Font.font("Cambria Math", FontWeight.NORMAL, 15));
         return text;
     }
     

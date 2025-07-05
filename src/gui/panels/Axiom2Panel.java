@@ -24,7 +24,7 @@ public class Axiom2Panel implements BasePanel {
         
         // Titolo
         Label title = new Label("Secondo Assioma di Kolmogorov: Normalizzazione");
-        title.setFont(Font.font("System", FontWeight.BOLD, 24));
+        title.setFont(Font.font("System", FontWeight.BOLD, 26));
         
         // Definizione formale
         TitledPane formalDefinition = createFormalDefinitionSection();
@@ -54,6 +54,7 @@ public class Axiom2Panel implements BasePanel {
         definitionArea.setWrapText(true);
         definitionArea.setEditable(false);
         definitionArea.setPrefRowCount(2);
+        definitionArea.setMinHeight(200);
         definitionArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         HBox formulaBox = new HBox(10);
@@ -70,6 +71,7 @@ public class Axiom2Panel implements BasePanel {
         explanationArea.setWrapText(true);
         explanationArea.setEditable(false);
         explanationArea.setPrefRowCount(6);
+        explanationArea.setMinHeight(200);
         explanationArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         content.getChildren().addAll(definitionArea, formulaBox, explanationArea);
@@ -96,6 +98,8 @@ public class Axiom2Panel implements BasePanel {
         explanationArea.setWrapText(true);
         explanationArea.setEditable(false);
         explanationArea.setPrefRowCount(10);
+        explanationArea.setMinHeight(100);
+        explanationArea.setPrefHeight(100);
         explanationArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         content.getChildren().add(explanationArea);
@@ -116,6 +120,7 @@ public class Axiom2Panel implements BasePanel {
         introArea.setWrapText(true);
         introArea.setEditable(false);
         introArea.setPrefRowCount(3);
+        introArea.setMinHeight(200);
         introArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Creazione del grafico a torta
@@ -144,6 +149,7 @@ public class Axiom2Panel implements BasePanel {
         totalTextArea.setWrapText(true);
         totalTextArea.setEditable(false);
         totalTextArea.setPrefRowCount(2);
+        totalTextArea.setMinHeight(200);
         totalTextArea.setMaxWidth(Double.MAX_VALUE);
         totalTextArea.setPrefWidth(600);
         totalTextArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
@@ -159,6 +165,8 @@ public class Axiom2Panel implements BasePanel {
         explanationArea.setWrapText(true);
         explanationArea.setEditable(false);
         explanationArea.setPrefRowCount(3);
+        explanationArea.setMinHeight(100);
+        explanationArea.setPrefHeight(100);
         explanationArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         content.getChildren().addAll(introArea, pieChart, legend, explanationArea);
@@ -176,11 +184,13 @@ public class Axiom2Panel implements BasePanel {
         introArea.setWrapText(true);
         introArea.setEditable(false);
         introArea.setPrefRowCount(1);
+        introArea.setMinHeight(100);
+        introArea.setPrefHeight(100);
         introArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Esempio 1
         Label example1Label = new Label("Esempio 1: Lancio di una moneta");
-        example1Label.setFont(Font.font("System", FontWeight.BOLD, 14));
+        example1Label.setFont(Font.font("System", FontWeight.BOLD, 16));
         
         TextArea example1Area = new TextArea("Consideriamo il lancio di una moneta. Lo spazio campionario è Ω = {testa, croce}.\n" +
                                "P(testa) = 0.5\n" +
@@ -190,11 +200,12 @@ public class Axiom2Panel implements BasePanel {
         example1Area.setWrapText(true);
         example1Area.setEditable(false);
         example1Area.setPrefRowCount(6);
+        example1Area.setMinHeight(200);
         example1Area.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Esempio 2
         Label example2Label = new Label("Esempio 2: Estrazione di una carta");
-        example2Label.setFont(Font.font("System", FontWeight.BOLD, 14));
+        example2Label.setFont(Font.font("System", FontWeight.BOLD, 16));
         
         TextArea example2Area = new TextArea("Consideriamo l'estrazione di una carta da un mazzo standard di 52 carte. " +
                                "Lo spazio campionario contiene 52 possibili risultati, uno per ogni carta.\n" +
@@ -207,11 +218,13 @@ public class Axiom2Panel implements BasePanel {
         example2Area.setWrapText(true);
         example2Area.setEditable(false);
         example2Area.setPrefRowCount(8);
+        example2Area.setMinHeight(100);
+        example2Area.setPrefHeight(100);
         example2Area.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         // Esempio 3
         Label example3Label = new Label("Esempio 3: Lancio di due dadi");
-        example3Label.setFont(Font.font("System", FontWeight.BOLD, 14));
+        example3Label.setFont(Font.font("System", FontWeight.BOLD, 17));
         
         TextArea example3Area = new TextArea("Consideriamo il lancio di due dadi a sei facce. Lo spazio campionario contiene 36 possibili " +
                                "combinazioni (6 × 6 = 36).\n" +
@@ -224,6 +237,8 @@ public class Axiom2Panel implements BasePanel {
         example3Area.setWrapText(true);
         example3Area.setEditable(false);
         example3Area.setPrefRowCount(8);
+        example3Area.setMinHeight(100);
+        example3Area.setPrefHeight(100);
         example3Area.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         content.getChildren().addAll(introArea, new Separator(), 
@@ -253,6 +268,8 @@ public class Axiom2Panel implements BasePanel {
         consequencesArea.setWrapText(true);
         consequencesArea.setEditable(false);
         consequencesArea.setPrefRowCount(12);
+        consequencesArea.setMinHeight(100);
+        consequencesArea.setPrefHeight(100);
         consequencesArea.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         
         content.getChildren().add(consequencesArea);
